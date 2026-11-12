@@ -1,0 +1,16 @@
+# Este repositorio vive dentro de la carpeta de instalación del juego.
+# Los archivos del juego tienen copyright y NO deben subirse nunca.
+# Por eso se ignora todo por defecto y solo se permite lo que se liste aquí.
+
+/*
+
+# Archivos del proyecto permitidos
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/LICENSE
+
+# Carpetas del mod (añadir aquí las nuevas carpetas del proyecto)
+!/traduccion/
+!/tools/
+!/docs/
