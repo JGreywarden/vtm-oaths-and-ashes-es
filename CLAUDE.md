@@ -67,8 +67,11 @@ Formato de traducción, una cadena por línea:
   múltiplo de 4. Se sustituye buscando la cadena original empaquetada exacta.
 - Lectura y escritura: `obj.get_raw_data()`, `obj.set_raw_data()`, `serialized_file.save()`.
 - El nombre del objeto es la cadena que empieza en el byte 28 de sus datos.
-- Escenas: 96 `MonoBehaviour` en `resources.assets`, nombrados `DTA{acto}-P{parte}-{escena}`.
-  Los sufijos `H` y `HL` son variantes de una misma escena (significado por confirmar).
+- Escenas: 165 `MonoBehaviour` en `resources.assets`, nombrados `DTA{acto}-P{parte}-{escena}`
+  (actos 0 a 3: 10, 61, 72 y 22 escenas). Los sufijos `H` y `HL` son variantes de una misma
+  escena (significado por confirmar).
+- Fuera de los actos: 4 finales (`DTEND*`) y unas 20 escenas de alimentación
+  (`DTA-FEEDING*`, `DTL-FEEDING*`).
 - Interfaz (menús, botones): en `sharedassets1.assets` y en los archivos `level*`.
 - Dentro de una escena hay también cadenas que no son texto visible (identificadores de
   fondo como `OPERABALCONY`, nombres de tipos de C#, números de línea). No se traducen.
@@ -160,8 +163,27 @@ término en minúscula, la traducción también.
 4. Las dudas de traducción se agrupan y se preguntan juntas, no una a una.
 5. Las imágenes con texto incrustado se valoran caso por caso con el usuario.
 
-## Estado actual
+## Fases
 
-- Hecho: repo, glosario cerrado (172 términos), prueba técnica validada dentro del juego.
-- Por hacer: `requirements.txt`, `pyproject.toml`, código de `tools/` con sus tests,
-  flujo de GitHub Actions, extracción de originales y primera escena traducida.
+Cada fase se cierra solo cuando se cumple su criterio. La historia se traduce en orden de
+juego y el bloque de revisión natural es la «parte» (`P{n}`) de cada acto.
+
+0. **Preparación** (cerrada): repo, glosario, prueba técnica en el juego y este documento.
+1. **Herramientas**: `requirements.txt`, `pyproject.toml`, GitHub Actions y los módulos
+   extraer, construir y validar con sus tests. *Cierre:* sin traducciones, construir deja el
+   juego igual; con una, se ve en el juego; tests en verde.
+2. **Piloto, el prólogo**: acto 0, parte 1 (4 escenas) y `personajes.csv`. *Cierre:* el
+   usuario lo juega y aprueba el estilo (tono, tú/usted, palabrotas, ortotipografía).
+3. **Interfaz y sistemas**: menús, opciones, tutoriales, diario, fichas de personaje,
+   misiones y escenas de alimentación. *Cierre:* todo lo que no es historia, revisado.
+4. **Acto 0 (resto) y acto 1**: 6 + 61 escenas. *Cierre:* cada bloque jugado y revisado.
+5. **Acto 2**: 72 escenas en 13 partes. *Cierre:* igual.
+6. **Acto 3 y finales**: 22 escenas y 4 finales. *Cierre:* el juego se completa en español.
+7. **Revisión global**: coherencia de todo el texto, imágenes con texto incrustado y
+   correcciones acumuladas. *Cierre:* ninguna cadena sin traducir ni aviso de validación.
+8. **Publicación**: instalador `.exe`, instrucciones en el README y versión 1.0 en GitHub
+   Releases. *Cierre:* alguien sin Python instala y desinstala el mod.
+
+Peso aproximado del texto: acto 0, 8 %; acto 1, 37 %; acto 2, 35 %; acto 3, 20 %.
+
+**Fase actual: 1, sin empezar.** Al cerrar una fase, se actualiza esta línea.
