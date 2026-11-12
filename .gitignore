@@ -8,9 +8,17 @@
 !/.gitignore
 !/.gitattributes
 !/README.md
+!/CLAUDE.md
 !/LICENSE
+!/requirements.txt
+!/pyproject.toml
 
-# Carpetas del mod (añadir aquí las nuevas carpetas del proyecto)
+# Carpetas del proyecto (añadir aquí las nuevas)
 !/traduccion/
 !/tools/
+!/tests/
 !/docs/
+!/.github/
+
+# Cachés de python dentro de las carpetas permitidas
+__pycache__/

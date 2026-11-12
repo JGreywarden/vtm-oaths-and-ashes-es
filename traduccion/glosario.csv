@@ -1,0 +1,173 @@
+en,es,categoria,estado,notas
+Kindred,Vástago / Vástagos,sociedad,oficial,siempre con mayúscula
+kine,ganado,sociedad,oficial,
+mortal,mortal,sociedad,oficial,
+lick,chupóptero,jerga,oficial,jerga anarquista para vampiro; solo cuando sea sustantivo
+Cammy,Cami / Camis,jerga,oficial,despectivo anarquista para miembro de la Camarilla
+ghoul,ghoul / ghouls,sociedad,oficial,sin adaptar
+blood doll,muñeca de sangre,jerga,oficial,
+vessel,recipiente,sociedad,oficial,mortal del que se bebe
+herd,rebaño,sociedad,oficial,
+sire,sire,sociedad,oficial,
+childe,chiquillo / chiquilla,sociedad,oficial,
+coterie,coterie,sociedad,oficial,femenino: la coterie
+elder,antiguo,sociedad,oficial,
+ancilla,ancilla / ancillae,sociedad,oficial,
+neonate,neonato,sociedad,oficial,
+fledgling,recién Abrazado,sociedad,oficial,los manuales usan esta perífrasis
+thin-blood,sangre débil,sociedad,oficial,invariable en plural: los sangre débil
+Duskborn,Crepuscular / Crepusculares,sociedad,oficial,siempre con mayúscula
+Caitiff,Caitiff,sociedad,oficial,
+clanless,sin clan,sociedad,oficial,
+Autarkis,Autarca / Autarcas,sociedad,oficial,el juego usa la forma antigua Autarkis; se traduce con la forma de los manuales V5 en español
+clan,clan,sociedad,oficial,con mayúscula solo junto al nombre: Clan Ventrue
+bloodline,linaje,sociedad,oficial,
+generation,generación,sociedad,oficial,
+sect,secta,sociedad,oficial,
+Camarilla,Camarilla,sectas,oficial,
+Ivory Tower,Torre de Marfil,sectas,oficial,sobrenombre de la Camarilla
+Anarch,Anarquista,sectas,oficial,siempre con mayúscula
+Anarch Movement,Movimiento Anarquista,sectas,oficial,
+Sabbat,Sabbat,sectas,oficial,
+Second Inquisition,Segunda Inquisición,sectas,oficial,
+Order of Hermes,Orden de Hermes,sectas,oficial,
+Ashfinders,Buscacenizas,sectas,oficial,invariable
+Inner Circle,Círculo Interior,cargos,oficial,
+Justicar,Justicar,cargos,oficial,invariable en plural: los Justicar
+Archon,Arconte,cargos,oficial,
+Alastor,Alastor,cargos,aprobado,no aparece en los manuales de referencia
+Red List,Lista Roja,cargos,oficial,
+Prince,Príncipe,cargos,oficial,
+Baron,Barón,cargos,oficial,femenino Baronesa no atestiguado en los manuales
+Seneschal,Senescal,cargos,oficial,
+Sheriff,Sheriff,cargos,oficial,
+Hound,Sabueso,cargos,oficial,en minúscula cuando no sea el cargo
+Scourge,Azote,cargos,oficial,
+Harpy,Arpía,cargos,oficial,
+Keeper of Elysium,Guardián del Elíseo,cargos,oficial,femenino: Guardiana
+Primogen,Primogénito,cargos,oficial,el consejo es la Primogenitura
+Regent,Regente,cargos,oficial,cargo Tremere
+High Regent,Alto Regente,cargos,aprobado,no aparece en los manuales de referencia
+Chantry,Capilla,lugares,oficial,
+Pyramid,Pirámide,sectas,oficial,estructura Tremere
+Court,Corte,sociedad,oficial,con mayúscula cuando sea la corte del Príncipe
+Praxis,Praxis,sociedad,oficial,
+Elysium,Elíseo,lugares,oficial,
+haven,refugio,lugares,oficial,
+domain,dominio,lugares,oficial,
+the Rack,el Coto,lugares,oficial,
+hunting ground,territorio de caza,lugares,oficial,
+Masquerade,Mascarada,leyes,oficial,
+Traditions,Tradiciones,leyes,oficial,
+Sixth Tradition,Sexta Tradición,leyes,oficial,la Destrucción
+Blood Hunt,Caza de Sangre,leyes,oficial,
+boon,favor,sociedad,oficial,
+Embrace,Abrazo / Abrazar / Abrazado,condición,oficial,siempre con mayúscula
+the Kiss,el Beso,condición,oficial,
+the Blood,la Sangre,condición,oficial,con mayúscula solo cuando el original la lleve (sangre vampírica)
+vitae,vitae,condición,oficial,
+Blood Bond,Vínculo de Sangre,condición,oficial,
+Bonded,Vinculado,condición,oficial,
+the Beast,la Bestia,condición,oficial,
+Hunger,Ansia,condición,oficial,nunca hambre cuando es el rasgo vampírico
+frenzy,frenesí,condición,oficial,
+torpor,letargo,condición,oficial,
+final death,muerte definitiva,condición,oficial,
+diablerie,diablerie,condición,oficial,
+diablerist,diabolista,condición,aprobado,no atestiguado en los manuales de referencia
+unlife,no-vida,condición,oficial,
+undead,no-muerto,condición,oficial,
+Humanity,Humanidad,condición,oficial,
+Stains,Máculas,condición,oficial,
+Conviction,Convicción,condición,oficial,
+Compulsion,Compulsión,condición,oficial,
+Bane,Perdición,condición,oficial,la maldición de cada clan
+Gehenna,Gehenna,condición,oficial,
+the Beckoning,la Llamada,condición,oficial,
+stake,estaca / estacar,condición,oficial,
+resonance,resonancia,sangre,oficial,
+sanguine,sanguínea,sangre,oficial,
+choleric,colérica,sangre,oficial,
+melancholic,melancólica,sangre,oficial,
+phlegmatic,flemática,sangre,oficial,
+Rouse Check,tirada de Enardecimiento,sangre,oficial,
+Blush of Life,Rubor de la Vida,sangre,oficial,
+Blood Potency,Potencia de Sangre,sangre,oficial,
+Disciplines,Disciplinas,disciplinas,oficial,
+Animalism,Animalismo,disciplinas,oficial,
+Auspex,Auspex,disciplinas,oficial,
+Blood Sorcery,Hechicería de Sangre,disciplinas,oficial,
+Celerity,Celeridad,disciplinas,oficial,
+Dominate,Dominación,disciplinas,oficial,
+Fortitude,Fortaleza,disciplinas,oficial,
+Obfuscate,Ofuscación,disciplinas,oficial,
+Oblivion,Olvido,disciplinas,oficial,
+Potence,Potencia,disciplinas,oficial,
+Presence,Presencia,disciplinas,oficial,
+Protean,Protean,disciplinas,oficial,
+Thin-blood Alchemy,Alquimia de Sangre Débil,disciplinas,oficial,nombre de Disciplina: conserva las mayúsculas
+ritual,ritual,disciplinas,oficial,
+Ventrue,Ventrue,clanes,oficial,
+Clan of Kings,Clan de los Reyes,clanes,oficial,sobrenombre Ventrue
+Blue Blood,Sangre Azul,clanes,oficial,sobrenombre Ventrue
+Toreador,Toreador,clanes,oficial,
+Degenerates,Degenerados,clanes,oficial,sobrenombre Toreador
+Tremere,Tremere,clanes,oficial,
+Warlocks,Brujos,clanes,oficial,sobrenombre Tremere
+Nosferatu,Nosferatu,clanes,oficial,
+Malkavian,Malkavian,clanes,oficial,
+Brujah,Brujah,clanes,oficial,
+Gangrel,Gangrel,clanes,oficial,
+Banu Haqim,Banu Haqim,clanes,oficial,
+Lasombra,Lasombra,clanes,oficial,
+Hecata,Hécata,clanes,oficial,con tilde en español
+The Ministry,el Ministerio,clanes,oficial,
+Tzimisce,Tzimisce,clanes,oficial,
+Ravnos,Ravnos,clanes,oficial,
+Strength,Fuerza,rasgos,oficial,solo cuando sea rasgo de juego
+Dexterity,Destreza,rasgos,oficial,solo cuando sea rasgo de juego
+Stamina,Resistencia,rasgos,oficial,solo cuando sea rasgo de juego
+Charisma,Carisma,rasgos,oficial,solo cuando sea rasgo de juego
+Manipulation,Manipulación,rasgos,oficial,solo cuando sea rasgo de juego
+Composure,Compostura,rasgos,oficial,solo cuando sea rasgo de juego
+Intelligence,Inteligencia,rasgos,oficial,solo cuando sea rasgo de juego
+Wits,Astucia,rasgos,oficial,solo cuando sea rasgo de juego
+Resolve,Resolución,rasgos,oficial,solo cuando sea rasgo de juego
+Willpower,Fuerza de Voluntad,rasgos,oficial,
+Intimidation,Intimidación,rasgos,oficial,solo cuando sea rasgo de juego
+Persuasion,Persuasión,rasgos,oficial,solo cuando sea rasgo de juego
+Subterfuge,Subterfugio,rasgos,oficial,solo cuando sea rasgo de juego
+Insight,Perspicacia,rasgos,oficial,solo cuando sea rasgo de juego
+Awareness,Consciencia,rasgos,oficial,solo cuando sea rasgo de juego
+Streetwise,Callejeo,rasgos,oficial,solo cuando sea rasgo de juego
+Etiquette,Etiqueta,rasgos,oficial,solo cuando sea rasgo de juego
+Leadership,Liderazgo,rasgos,oficial,solo cuando sea rasgo de juego
+Politics,Política,rasgos,oficial,solo cuando sea rasgo de juego
+Investigation,Investigación,rasgos,oficial,solo cuando sea rasgo de juego
+Occult,Ocultismo,rasgos,oficial,solo cuando sea rasgo de juego
+Stealth,Sigilo,rasgos,oficial,solo cuando sea rasgo de juego
+Brawl,Pelea,rasgos,oficial,solo cuando sea rasgo de juego
+Survival,Supervivencia,rasgos,oficial,solo cuando sea rasgo de juego
+Difficulty,Dificultad,rasgos,oficial,solo cuando sea rasgo de juego
+aggravated damage,daño agravado,rasgos,oficial,
+superficial damage,daño superficial,rasgos,oficial,
+Influence,Influencia,rasgos,oficial,recurso del juego
+Black Rose,Rosa Negra,juego,aprobado,facción Anarquista de Diron
+Red Mandate,Mandato Rojo,juego,aprobado,anillo y autoridad de la Justicar
+the Mandate,el Mandato,juego,aprobado,forma abreviada de Red Mandate
+Wild Chase,Caza Salvaje,juego,aprobado,banda Anarquista
+Red Lotus,Loto Rojo,juego,aprobado,movimiento Anarquista de Tuyet
+Night Market,Mercado Nocturno,juego,aprobado,
+Living Archive,Archivo Viviente,juego,aprobado,personaje al servicio de Lucinde
+Crow,Cuervo,juego,aprobado,apodo de un Nosferatu; se traduce por ser apodo y no nombre
+Crowlings,Corvatos,juego,aprobado,red de espías de Cuervo
+Crow's Nest,Nido del Cuervo,juego,aprobado,guarida de Cuervo; derivado de Crow → Cuervo
+Concierge,Conserje,juego,aprobado,personaje del hotel Reinegger
+Ashe,Ceniza,juego,aprobado,droga cocinada con cenizas de Vástago; el ingrediente va en plural y minúscula (cenizas)
+Affiliation,Afiliación,juego,aprobado,campo de las fichas de personaje
+Night Units,Unidades Nocturnas,juego,aprobado,recurso de la interfaz: 4 por noche
+Political Missions,Misiones Políticas,juego,aprobado,
+Hunts,Cacerías,juego,aprobado,tipo de misión
+Bacchanalia,Bacchanalia,juego,aprobado,nombre de local; no se traduce
+Tantalos,Tantalos,juego,aprobado,nombre de local; no se traduce
+Namenslos,Namenslos,juego,aprobado,nombre de local; no se traduce
