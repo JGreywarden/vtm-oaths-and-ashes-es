@@ -39,12 +39,15 @@ def glossary_errors(rows: list[dict]) -> list[str]:
 
 
 def term_pattern(term: str) -> re.Pattern:
-    """el término entero, con plural o posesivo; un término en mayúscula exige la mayúscula."""
+    """el término entero, con plural o posesivo; un término en mayúscula exige la mayúscula.
+
+    una contracción no es el término: «haven’t» no contiene «haven».
+    """
     body = re.escape(term)
     if term.startswith("the "):
         body = "[Tt]" + body[1:]
     flags = re.IGNORECASE if term == term.lower() else 0
-    return re.compile(rf"\b{body}(?:e?s|['’]s)?\b", flags)
+    return re.compile(rf"\b{body}(?:e?s|['’]s)?\b(?!['’]\w)", flags)
 
 
 def stem(form: str) -> str:

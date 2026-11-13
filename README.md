@@ -5,7 +5,8 @@ Mod no oficial de traducción al español del videojuego *Vampire: The Masquerad
 ## Estado
 
 Las herramientas para extraer el texto del juego, aplicar la traducción y validarla están
-hechas. La traducción todavía no ha empezado y no hay una versión instalable.
+hechas. El prólogo (acto 0, parte 1) está traducido y revisado jugando; el resto del juego
+sigue en inglés y todavía no hay una versión instalable.
 
 ## Estructura del repositorio
 
