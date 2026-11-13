@@ -74,6 +74,9 @@ def test_glossary_errors_reports_duplicates_and_malformed_rows():
         ("the Beast", "The Beast stirs.", True),
         ("the Beast", "the beast of burden", False),
         ("Crow", "Crow's hideout", True),
+        ("haven", "We haven’t moved since dusk.", False),
+        ("haven", "I haven't seen it.", False),
+        ("haven", "The haven’s door was open.", True),
     ],
 )
 def test_term_pattern_matches_whole_terms(glossary_term, text, found):

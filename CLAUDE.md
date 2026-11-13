@@ -33,7 +33,7 @@ Idioma de trabajo: español. Responde al usuario siempre en español.
 CLAUDE.md  README.md  requirements.txt  pyproject.toml
 traduccion/
   glosario.csv          términos: en, es, categoria, estado, notas
-  personajes.csv        género y tratamiento de cada personaje (crear al empezar a traducir)
+  personajes.csv        género, quién es y tratamiento de cada personaje
   escenas/              un .jsonl por escena (DTA0-P1-1.jsonl…)
   interfaz/             un .jsonl por tipo de texto: hablantes, requisitos, diario,
                         misiones, alquimia, influencia y textos
@@ -215,6 +215,26 @@ y `construir` (también `--restaurar`) se niegan a actuar, porque mezclarían do
 - Ortotipografía española: `¿` y `¡` de apertura, comillas angulares `« »` (dentro de ellas,
   `“ ”`), raya `—` pegada al inciso, y `…` como un solo carácter.
 
+### Estilo aprobado en el piloto
+
+Decisiones que el usuario aprobó jugando el prólogo; valen para todo el juego.
+
+- Narración en presente, como el original. Pretérito perfecto para lo que acaba de ocurrir
+  («me has interrumpido») y `vosotros` para el plural.
+- Sin leísmo, laísmo ni loísmo: «capturarlo», «le rozo la sien».
+- Las opciones que son acciones van en imperativo de tú («Mira el escenario.»); las que son
+  frases dichas se traducen como diálogo.
+- Los poderes de Disciplina entre corchetes van en mayúsculas, con el nombre del manual:
+  `[COMPELER]`, `[MENTE OLVIDADIZA]`.
+- Palabrotas con su fuerza: «prat» → «cretino», «bastard» → «cabrón», «Damn it» → «Maldita sea».
+- Los Vástagos se tutean entre sí. Un mortal trata de usted a un desconocido; un Vástago tutea
+  al mortal al que somete y lo trata de usted mientras finge ser uno de ellos.
+- Los mensajes citados dentro de la narración van entre « ».
+- Medidas imperiales, a métricas («half an inch» → «un centímetro»).
+- Erratas del original: se traduce lo que quiso decir.
+- Palabras que confunden fuera de contexto se evitan aunque sean correctas: «chandelier» es
+  «lámpara de araña» la primera vez y «lámpara» después, nunca «araña» a secas.
+
 ### Glosario
 
 - `traduccion/glosario.csv` manda. Antes de traducir un término de ambientación, se consulta.
@@ -266,7 +286,7 @@ juego y el bloque de revisión natural es la «parte» (`P{n}`) de cada acto.
 1. **Herramientas** (cerrada): `requirements.txt`, `pyproject.toml`, GitHub Actions y los módulos
    extraer, construir y validar con sus tests. *Cierre:* sin traducciones, construir deja el
    juego igual; con una, se ve en el juego; tests en verde.
-2. **Piloto, el prólogo**: acto 0, parte 1 (4 escenas) y `personajes.csv`. *Cierre:* el
+2. **Piloto, el prólogo** (cerrada): acto 0, parte 1 (4 escenas) y `personajes.csv`. *Cierre:* el
    usuario lo juega y aprueba el estilo (tono, tú/usted, palabrotas, ortotipografía).
 3. **Interfaz y sistemas**: menús, opciones, tutoriales, diario, fichas de personaje,
    misiones y escenas de alimentación. *Cierre:* todo lo que no es historia, revisado.
@@ -280,4 +300,4 @@ juego y el bloque de revisión natural es la «parte» (`P{n}`) de cada acto.
 
 Peso aproximado del texto: acto 0, 8 %; acto 1, 37 %; acto 2, 35 %; acto 3, 20 %.
 
-**Fase actual: 2, sin empezar.** Al cerrar una fase, se actualiza esta línea.
+**Fase actual: 3, sin empezar.** Al cerrar una fase, se actualiza esta línea.
