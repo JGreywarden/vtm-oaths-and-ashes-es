@@ -10,7 +10,7 @@ from pathlib import Path
 
 from tools.juego import game_running, load_file, script_classes, text_objects
 from tools.lector import read_fields
-from tools.rutas import BACKUP, BUILT, DATA, HASHES, MANIFEST
+from tools.rutas import BACKUP, BUILT, DATA, HASHES, MANIFEST, METADATA
 
 
 def sha256(path: Path) -> str:
@@ -19,7 +19,7 @@ def sha256(path: Path) -> str:
 
 
 def known_hashes() -> dict[str, str]:
-    """hash del original de cada archivo del juego que contiene texto."""
+    """hash del original de cada archivo con texto, por su ruta dentro del juego."""
     return json.loads(HASHES.read_text(encoding="utf-8"))["files"]
 
 
@@ -55,7 +55,7 @@ def ensure_backup(name: str, expected: str, data: Path = DATA, backup: Path = BA
     target = backup / name
     if not target.exists():
         check_original(data / name, expected)
-        backup.mkdir(exist_ok=True)
+        target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(data / name, target)
     check_original(target, expected)
     return target
@@ -100,23 +100,27 @@ def still_patched(hashes: dict[str, str], built: dict[str, str]) -> list[str]:
     return [name for name, value in hashes.items() if built.get(name) == value]
 
 
-def replace_backups(paths: list[Path], backup: Path) -> None:
+def backup_names(data: Path, classes: dict[int, str]) -> list[str]:
+    """lo que se respalda: los archivos de unity con texto y el metadato con los literales."""
+    return [path.name for path in text_files(data, classes)] + [METADATA]
+
+
+def replace_backups(names: list[str], data: Path, backup: Path) -> None:
     """los respaldos de una versión anterior del juego ya no sirven para la instalada."""
-    backup.mkdir(exist_ok=True)
-    for old in backup.iterdir():
-        old.unlink()
-    for path in paths:
-        shutil.copyfile(path, backup / path.name)
+    shutil.rmtree(backup, ignore_errors=True)
+    for name in names:
+        (backup / name).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(data / name, backup / name)
 
 
 def renew(build: str, built: dict[str, str], backup: Path = BACKUP, target: Path = HASHES) -> None:
     """respalda la versión instalada; se niega si queda algún archivo parcheado por el mod."""
-    paths = text_files(DATA, script_classes())
-    hashes = {path.name: sha256(path) for path in paths}
+    names = backup_names(DATA, script_classes())
+    hashes = {name: sha256(DATA / name) for name in names}
     patched = still_patched(hashes, built)
     if patched:
         raise ValueError(f"verifica la integridad en steam; siguen parcheados: {patched}")
-    replace_backups(paths, backup)
+    replace_backups(names, DATA, backup)
     content = json.dumps({"build": build, "files": hashes}, indent=2)
     target.write_text(content + "\n", encoding="utf-8")
 

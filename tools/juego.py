@@ -12,6 +12,7 @@ from tools.esquemas import SCHEMAS
 from tools.rutas import DATA, GAME_EXE
 
 MANAGERS = "globalgamemanagers.assets"
+TRANSFORMS = {"Transform", "RectTransform"}
 
 
 def load_file(path: Path):
@@ -34,6 +35,33 @@ def object_class(raw: bytes, externals: list[str], classes: dict[int, str]) -> s
 
 def object_name(raw: bytes) -> str:
     return read_string(raw, 28)[0]
+
+
+def owner_id(raw: bytes) -> int:
+    """id del gameobject al que pertenece un componente: va en los bytes 4 a 12."""
+    return struct.unpack_from("<q", raw, 4)[0]
+
+
+def object_path(nodes: dict[int, tuple[str, int]], key: int) -> str:
+    """ruta de un gameobject subiendo por sus padres; cada nodo es (nombre, id del padre)."""
+    parts, seen = [], set()
+    while key in nodes and key not in seen:
+        seen.add(key)
+        name, key = nodes[key]
+        parts.append(name)
+    return "/".join(reversed(parts))
+
+
+def hierarchy(file) -> dict[int, tuple[str, int]]:
+    """nombre y padre de cada gameobject: un texto de interfaz solo se sitúa por su pantalla."""
+    readers = [o for o in file.objects.values() if o.type.name in TRANSFORMS]
+    trees = [(reader.path_id, reader.read()) for reader in readers]
+    owner = {path_id: tree.m_GameObject.path_id for path_id, tree in trees}
+    names = {key: file.objects[key].read().m_Name for key in owner.values()}
+    return {
+        owner[path_id]: (names[owner[path_id]], owner.get(tree.m_Father.path_id, 0))
+        for path_id, tree in trees
+    }
 
 
 def text_objects(file, classes: dict[int, str]) -> Iterator[tuple]:

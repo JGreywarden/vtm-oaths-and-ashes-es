@@ -9,10 +9,12 @@ import UnityPy
 from tools.cadenas import text_id
 from tools.construir import build, build_file, patch_file
 from tools.esquemas import SCHEMAS
-from tools.extraer import extract, file_rows
+from tools.extraer import extract, file_rows, source_rows
 from tools.juego import load_file, object_class, object_name, script_classes, text_objects
 from tools.lector import read_fields
+from tools.literales import VISIBLE, patch_literals, read_literals, visible_texts
 from tools.respaldo import (
+    backup_names,
     has_text,
     known_build,
     known_hashes,
@@ -21,7 +23,7 @@ from tools.respaldo import (
     steam_build,
     text_files,
 )
-from tools.rutas import BACKUP, DATA
+from tools.rutas import BACKUP, DATA, METADATA
 from tools.traducciones import load_jsonl, write_jsonl
 
 pytestmark = pytest.mark.game
@@ -62,7 +64,7 @@ def test_backups_are_the_known_originals():
 def test_every_text_object_fits_its_schema_exactly(classes):
     """si una actualización del juego cambia un formato, falla aquí y no en la partida."""
     found = set()
-    for name in known_hashes():
+    for name in sorted(set(known_hashes()) - {METADATA}):
         file = load_file(BACKUP / name)
         externals = [external.path for external in file.externals]
         for _obj, schema, raw in text_objects(file, classes):
@@ -80,6 +82,11 @@ def test_file_rows_gives_context_for_scene_lines(classes):
     rows = [row for target, row in file_rows(BACKUP / "resources.assets", classes)]
     assert any(row.get("hablante") == "THOMAS" for row in rows)
     assert {"linea", "opcion"} <= {row.get("tipo") for row in rows}
+
+
+def test_file_rows_places_interface_texts_by_their_object_path(classes):
+    rows = [row for target, row in file_rows(BACKUP / "level9", classes) if "textos" in target]
+    assert rows and all(row["objeto"].startswith("Canvas/") for row in rows)
 
 
 def test_patch_file_without_translations_changes_nothing(classes):
@@ -105,7 +112,8 @@ def test_patch_file_changes_only_the_translated_text(classes):
 
 
 def test_build_file_copies_an_untranslated_file_as_is(classes, tmp_path):
-    assert build_file(BACKUP / "sharedassets1.assets", {}, classes, tmp_path) is False
+    source = BACKUP / "sharedassets1.assets"
+    assert build_file("sharedassets1.assets", source, {}, classes, tmp_path) is False
     assert sha256(tmp_path / "sharedassets1.assets") == known_hashes()["sharedassets1.assets"]
 
 
@@ -131,8 +139,41 @@ def test_has_text_tells_files_with_visible_text(classes):
     assert not has_text(DATA / "level0", classes)
 
 
-def test_text_files_are_the_files_with_known_hashes(classes):
-    assert {path.name for path in text_files(DATA, classes)} == set(known_hashes())
+def test_text_files_are_the_unity_files_with_known_hashes(classes):
+    assert {path.name for path in text_files(DATA, classes)} == set(known_hashes()) - {METADATA}
+
+
+def test_backup_names_are_the_files_with_known_hashes(classes):
+    assert set(backup_names(DATA, classes)) == set(known_hashes())
+
+
+def test_every_visible_literal_is_in_the_metadata():
+    """si un parche quita o cambia un literal de la lista cerrada, falla aquí."""
+    data = (BACKUP / METADATA).read_bytes()
+    assert len(visible_texts(data)) == len(VISIBLE)
+
+
+def test_patch_literals_without_translations_keeps_the_metadata_identical():
+    data = (BACKUP / METADATA).read_bytes()
+    assert patch_literals(data, {}) is data
+
+
+def test_patch_literals_changes_only_the_translated_literal():
+    data = (BACKUP / METADATA).read_bytes()
+    text = visible_texts(data)[0]
+    patched = patch_literals(data, {text_id(text): "Texto de prueba: ¿se ve «así»?"})
+    before, after = read_literals(data), read_literals(patched)
+    changed = [n for n, raw in enumerate(before) if raw != after[n]]
+    assert len(before) == len(after) and len(changed) == 1
+    assert before[changed[0]].decode() == text
+    assert after[changed[0]].decode() == "Texto de prueba: ¿se ve «así»?"
+
+
+def test_source_rows_reads_the_code_texts_from_the_metadata(classes):
+    rows = list(source_rows(BACKUP / METADATA, classes))
+    assert len(rows) == len(VISIBLE)
+    assert {target for target, _row in rows} == {"interfaz/codigo.jsonl"}
+    assert all(row["objeto"] == "global-metadata.dat" for _target, row in rows)
 
 
 def test_renew_backs_up_the_installed_version(tmp_path):
@@ -140,6 +181,7 @@ def test_renew_backs_up_the_installed_version(tmp_path):
     written = json.loads((tmp_path / "hashes.json").read_text(encoding="utf-8"))
     assert written["build"] == "123" and set(written["files"]) == set(known_hashes())
     assert sha256(tmp_path / "respaldo" / "level1") == sha256(DATA / "level1")
+    assert sha256(tmp_path / "respaldo" / METADATA) == written["files"][METADATA]
 
 
 def test_renew_refuses_to_back_up_a_file_written_by_the_mod(tmp_path):
@@ -156,4 +198,14 @@ def test_build_applies_a_translation_folder(classes, tmp_path):
     write_jsonl(folder / "escenas" / "DTA0-P1-1.jsonl", [{"id": text_id(line), "es": "Prueba."}])
     assert build(folder, out) == ["resources.assets"]
     assert sha256(out / "resources.assets") != known_hashes()["resources.assets"]
+    assert sha256(out / "level1") == known_hashes()["level1"]
+    assert sha256(out / METADATA) == known_hashes()[METADATA]
+
+
+def test_build_translates_a_literal_of_the_code(tmp_path):
+    out, folder = tmp_path / "juego", tmp_path / "traduccion"
+    text = visible_texts((BACKUP / METADATA).read_bytes())[0]
+    write_jsonl(folder / "interfaz" / "codigo.jsonl", [{"id": text_id(text), "es": "Prueba."}])
+    assert build(folder, out) == [METADATA]
+    assert b"Prueba." in read_literals((out / METADATA).read_bytes())
     assert sha256(out / "level1") == known_hashes()["level1"]

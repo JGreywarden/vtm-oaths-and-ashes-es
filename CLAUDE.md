@@ -36,7 +36,7 @@ traduccion/
   personajes.csv        género, quién es y tratamiento de cada personaje
   escenas/              un .jsonl por escena (DTA0-P1-1.jsonl…)
   interfaz/             un .jsonl por tipo de texto: hablantes, requisitos, diario,
-                        misiones, alquimia, influencia y textos
+                        misiones, alquimia, influencia, textos y codigo
 tools/                  código python y hashes.json (versión del juego y sha-256 de
                         sus originales)
 tests/                  tests de pytest
@@ -62,7 +62,8 @@ Tres pasos, cada uno un módulo pequeño de `tools/`:
 
 Módulos de apoyo: `cadenas` (cadenas serializadas e `id`), `esquemas` (formato de cada clase
 con texto, solo datos), `lector` (lee un objeto con su esquema y sustituye textos), `juego`
-(borde con UnityPy), `respaldo` y `traducciones` (lectura de `.jsonl` y reparto por archivo).
+(borde con UnityPy), `literales` (textos del código, en `global-metadata.dat`), `respaldo` y
+`traducciones` (lectura de `.jsonl` y reparto por archivo).
 
 Formato de traducción, una cadena por línea:
 
@@ -104,16 +105,20 @@ y `construir` (también `--restaurar`) se niegan a actuar, porque mezclarían do
 2. Si avisa de que algún archivo sigue parcheado por el mod (Steam solo repone lo que
    cambia; lo sabe por `.construido.json`), el usuario verifica la integridad de los
    archivos en Steam y se repite el paso 1.
-3. `tools.extraer` y `pytest`: si un formato ha cambiado, falla el test de esquemas.
+3. `tools.extraer` y `pytest`: si un formato ha cambiado, falla el test de esquemas; si
+   cambia el formato del metadato o desaparece un literal de la lista cerrada, fallan los
+   tests de literales.
 4. `tools.validar` dice qué traducciones han quedado huérfanas («el id no existe en el
    original») y qué cadenas nuevas hay pendientes. Después, `tools.construir`.
 
 ### Datos técnicos del juego (verificados)
 
 - Unity 6000.3.17f1, IL2CPP, sin árboles de tipos: los `MonoBehaviour` se tratan como bytes.
-- Versión de referencia: `buildid` 26625395 de Steam (parche del 12-11-2026). El parche
-  cambió unas 200 cadenas y partió `DTA1-P2-3` en `DTA1-P2-3A` y `DTA1-P2-3B`; todos los
-  esquemas siguieron valiendo.
+- Versión de referencia: `buildid` 26657688 de Steam (parche del 14-11-2026). Reescribió
+  parte del acto 1 (unas 180 cadenas nuevas en 22 escenas), eliminó `DTA1-P0-3`, añadió a 22
+  misiones el aviso «this mission ends the night» y una opción de menú. El parche anterior
+  (26625395, 12-11-2026) partió `DTA1-P2-3` en `DTA1-P2-3A` y `DTA1-P2-3B`. En los dos casos
+  Steam repuso todos los archivos con texto y todos los esquemas siguieron valiendo.
 - Cadena serializada: longitud `int32` little-endian + UTF-8 + relleno con ceros hasta
   múltiplo de 4.
 - Lectura y escritura: `obj.get_raw_data()`, `obj.set_raw_data()`, `serialized_file.save()`.
@@ -135,8 +140,8 @@ y `construir` (también `--restaurar`) se niegan a actuar, porque mezclarían do
   - Etiquetas presentes: solo `<i>` y `<b>`. Las escenas no tienen saltos de línea. Hay 15
     líneas con espacios de ancho cero y 2 hablantes con espacios duros: son restos de edición
     y no se reproducen en la traducción.
-- Las 295 escenas están en `resources.assets`:
-  - 166 de los actos, `DTA{acto}-P{parte}-{escena}` (actos 0 a 3: 10, 62, 72 y 22 escenas).
+- Las 294 escenas están en `resources.assets`:
+  - 165 de los actos, `DTA{acto}-P{parte}-{escena}` (actos 0 a 3: 10, 61, 72 y 22 escenas).
   - 5 finales: `DTENDINGNEUTRALA`/`B`, `DTENDINGPOSITIVE1`/`2` y `DTENDNEGATIVE`.
   - 20 de alimentación: `DTA-FEEDING*` son de Alice y `DTL-FEEDING*` de Lenz (10 y 10).
   - 104 de juego político: `DTA1-PL*` (32), `DTA2-PL*` (16), `DTA2-PLOTPL*` (41) y
@@ -149,7 +154,8 @@ y `construir` (también `--restaurar`) se niegan a actuar, porque mezclarían do
   (`MainStoryMissionData`, `PoliticalPlayMissionData`), fórmulas (`FormulaDefinitionSO`),
   distritos y bandas (`DistrictInfo`, `GangInfo`) y textos sueltos (`TextMeshProUGUI`).
 - Archivos con texto (todos con respaldo y hash): `resources.assets`, `sharedassets1.assets`,
-  `sharedassets3.assets` y `level1` a `level14` (`level8` son los créditos).
+  `sharedassets3.assets`, `level1` a `level14` (`level8` son los créditos) y
+  `il2cpp_data/Metadata/global-metadata.dat` (el respaldo conserva esa ruta).
 - No se traducen: los `UI.Text` (panel de depuración de Unity) ni los logros (en los archivos
   solo hay identificadores; el nombre y la descripción están en Steam).
 - Las fuentes del juego muestran bien `¿ ¡ ñ Ñ ü á é í ó ú « » — …` (comprobado en el juego).
@@ -159,12 +165,28 @@ y `construir` (también `--restaurar`) se niegan a actuar, porque mezclarían do
 - El juego muestra en versalitas los botones y las etiquetas de hablante. Los botones de los
   avisos emergentes son estrechos: «Confirmar (prueba)» se partió en dos líneas. Conviene
   que esos textos sean tan cortos como el original.
-- Hay texto visible incrustado en el código, fuera de los archivos que tratan las
-  herramientas: el aviso superior «MASQUERADE SYSTEM UPDATED!» une el título del diario con
-  un literal ` UPDATED!` de `il2cpp_data/Metadata/global-metadata.dat`. Pendiente de
-  inventariar y resolver en la fase 3.
+- Hay texto visible incrustado en el código (`interfaz/codigo.jsonl`): son literales de
+  `global-metadata.dat` (versión 39 de metadatos). En el byte 8 de la cabecera van posición,
+  tamaño y número de la tabla de literales y de su bloque de datos; la tabla son `uint32` con
+  la posición de cada literal en el bloque (el último es el final) y cada literal es UTF-8
+  sin longitud ni terminador.
+  - Para traducir se añade un bloque nuevo al final del archivo y se apunta la cabecera a
+    él: ninguna otra sección se mueve y sin traducciones el archivo sale idéntico.
+  - Un literal se comparte con todo el código (motor y librerías incluidos), así que solo se
+    traducen los de la lista cerrada `VISIBLE` de `tools/literales.py`, guardada por `id`.
+    Entra en ella un literal que solo usa el código del juego y que no es una clave.
+  - Son claves y no se tocan: `Auto` (tipo de guardado, va a `metadata.json` de la partida),
+    `Slot{0}` (carpeta de la partida), los nombres de las acciones del mando (`Submit`,
+    `Cancel`, `Navigate`…) y los nombres de variables. El aviso «… UPDATED!» une el título
+    del diario con un literal; lo mismo «<banda> Leader:» y «Slot <n>».
+  - Quién usa un literal se averigua en `GameAssembly.dll`: cada literal tiene una casilla de
+    8 bytes en `.data` con el valor `0xA0000001 + 2·índice`, y el código la lee con una
+    dirección relativa; las funciones se delimitan con `.pdata`. El código propio del juego
+    ocupa el principio de la sección `il2cpp`.
+  - El juego enlaza solo los términos del diario dentro de los diálogos: busca el título de
+    cada entrada (sin «The » ni «Clan » delante) con sufijos de plural ingleses.
 - El archivo reescrito pesa algo menos que el original; el juego lo carga sin problemas.
-- Volumen: 25.339 cadenas y 394.000 palabras en las escenas; 1.472 cadenas y 52.000 palabras
+- Volumen: 25.403 cadenas y 395.000 palabras en las escenas; 1.510 cadenas y 52.000 palabras
   en la interfaz (de ellas, 548 cadenas del diario).
 
 ## Código
@@ -235,6 +257,35 @@ Decisiones que el usuario aprobó jugando el prólogo; valen para todo el juego.
 - Palabras que confunden fuera de contexto se evitan aunque sean correctas: «chandelier» es
   «lámpara de araña» la primera vez y «lámpara» después, nunca «araña» a secas.
 
+### Estilo aprobado en la fase 3
+
+Decisiones de la interfaz y los sistemas que el usuario aprobó; valen para todo el juego.
+
+- Un personaje al que el original trata de «they» (Tuyet, Doctor Morgan) se traduce con
+  redacción correcta sin marcas de género. Nunca «elle» ni desdobles.
+- Interfaz: «Opciones» para Settings y Options, «Diario», «Misiones» (no «Registro de
+  misiones», que no cabe en la pestaña) y «Ranura» para los perfiles de guardado.
+- Botones cortos, como el original: NAVEGAR, ATRÁS, SIGUIENTE, ELEGIR, ACEPTAR, DESTILAR.
+- Créditos: los cargos se traducen como áreas («Programación») y los nombres no se tocan.
+- Fichas del diario: `<b>Nacimiento</b>`, `<b>Abrazo</b>`, `<b>Ghoul desde</b>`,
+  `<b>Generación</b>: 10.ª`, `<b>Afiliación</b>: Anarquistas (…)`.
+- Misiones: «Cacería:» (Alice), «Reposición:» (Lenz) y «Toma de X».
+- Alimentación: Alice trata de usted mientras finge y tutea al dominar; Lenz tutea a todos.
+  Las palabras alemanas y los títulos de canciones no se traducen.
+- Un texto que el juego pega detrás de otro lleva una forma que no dependa del género ni
+  del número de lo que tiene delante: «<título> — ACTUALIZACIÓN», «<banda> — Líder:».
+
+Pendiente de comprobar jugando (si algo se ve mal, se corrige en su bloque):
+
+- si los textos de opción bloqueada se ven en pantalla (`DTA1-P0-2`, `DTA1-P2-1`,
+  `DTA1-P2-2`): 13 parecen mensajes y 26 notas de desarrollo;
+- el género del título de acto «EL TESTIGO», la etiqueta «DE LENZ» del laboratorio y cómo
+  suena «de por no-vida»;
+- los narradores deducidos de tres misiones (Hacène en `A2-P14-1` y `A2-P16-1`, Lucinde
+  en `A3-P5-1`) y dónde sale «Bajos fondos de Berlín»;
+- literales del código que siguen en inglés por si son claves: los nombres de modo
+  seguidos de « Mode on», «Choose », «End Mission» y el formato de fecha de la ranura.
+
 ### Glosario
 
 - `traduccion/glosario.csv` manda. Antes de traducir un término de ambientación, se consulta.
@@ -288,11 +339,12 @@ juego y el bloque de revisión natural es la «parte» (`P{n}`) de cada acto.
    juego igual; con una, se ve en el juego; tests en verde.
 2. **Piloto, el prólogo** (cerrada): acto 0, parte 1 (4 escenas) y `personajes.csv`. *Cierre:* el
    usuario lo juega y aprueba el estilo (tono, tú/usted, palabrotas, ortotipografía).
-3. **Interfaz y sistemas**: menús, opciones, tutoriales, diario, fichas de personaje,
-   misiones y escenas de alimentación. *Cierre:* todo lo que no es historia, revisado.
-4. **Acto 0 (resto) y acto 1**: 6 + 62 escenas. *Cierre:* cada bloque jugado y revisado.
+3. **Interfaz y sistemas** (cerrada): menús, opciones, tutoriales, diario, fichas de
+   personaje, misiones, escenas de alimentación y textos del código. *Cierre:* todo lo que
+   no es historia, revisado.
+4. **Acto 0 (resto) y acto 1**: 6 + 61 escenas. *Cierre:* cada bloque jugado y revisado.
 5. **Acto 2**: 72 escenas en 13 partes. *Cierre:* igual.
-6. **Acto 3 y finales**: 22 escenas y 4 finales. *Cierre:* el juego se completa en español.
+6. **Acto 3 y finales**: 22 escenas y 5 finales. *Cierre:* el juego se completa en español.
 7. **Revisión global**: coherencia de todo el texto, imágenes con texto incrustado y
    correcciones acumuladas. *Cierre:* ninguna cadena sin traducir ni aviso de validación.
 8. **Publicación**: instalador `.exe`, instrucciones en el README y versión 1.0 en GitHub
@@ -300,4 +352,4 @@ juego y el bloque de revisión natural es la «parte» (`P{n}`) de cada acto.
 
 Peso aproximado del texto: acto 0, 8 %; acto 1, 37 %; acto 2, 35 %; acto 3, 20 %.
 
-**Fase actual: 3, sin empezar.** Al cerrar una fase, se actualiza esta línea.
+**Fase actual: 4, sin empezar.** Al cerrar una fase, se actualiza esta línea.

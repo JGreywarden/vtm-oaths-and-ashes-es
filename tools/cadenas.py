@@ -3,10 +3,17 @@
 import hashlib
 import struct
 
+ZERO_WIDTH = chr(0x200B)  # espacio de ancho cero: resto de edición, no se ve
+
 
 def text_id(text: str) -> str:
     """identifica una cadena original sin tener que guardar su texto en el repo."""
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:12]
+
+
+def has_visible_text(text: str) -> bool:
+    """un campo que solo tiene espacios o espacios de ancho cero no hay que traducirlo."""
+    return bool(text.replace(ZERO_WIDTH, "").strip())
 
 
 def pack_string(text: str) -> bytes:

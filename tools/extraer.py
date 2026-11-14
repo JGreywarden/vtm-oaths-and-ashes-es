@@ -4,11 +4,20 @@ import sys
 from collections.abc import Iterable, Iterator
 from pathlib import Path
 
-from tools.cadenas import text_id
-from tools.juego import load_file, object_name, script_classes, text_objects
+from tools.cadenas import has_visible_text, text_id
+from tools.juego import (
+    hierarchy,
+    load_file,
+    object_name,
+    object_path,
+    owner_id,
+    script_classes,
+    text_objects,
+)
 from tools.lector import Field, read_fields
+from tools.literales import visible_texts
 from tools.respaldo import check_build, ensure_backup, known_build, known_hashes, steam_build
-from tools.rutas import ORIGINALS
+from tools.rutas import METADATA, ORIGINALS
 from tools.traducciones import SCENE_GROUPS, jsonl_files, target_file, write_jsonl
 
 
@@ -18,7 +27,7 @@ def object_rows(name: str, fields: list[Field]) -> Iterator[tuple[str, dict]]:
     for field in fields:
         if field.group == "hablantes":
             speaker = field.text
-        if not field.text:
+        if not has_visible_text(field.text):
             continue
         row = {"id": text_id(field.text), "en": field.text}
         if field.group in SCENE_GROUPS:
@@ -31,8 +40,28 @@ def object_rows(name: str, fields: list[Field]) -> Iterator[tuple[str, dict]]:
 
 
 def file_rows(source: Path, classes: dict[int, str]) -> Iterator[tuple[str, dict]]:
-    for _obj, schema, raw in text_objects(load_file(source), classes):
-        yield from object_rows(object_name(raw), read_fields(schema, raw))
+    """un texto de interfaz no tiene nombre: su contexto es la ruta de su gameobject."""
+    file, nodes = load_file(source), None
+    for _obj, schema, raw in text_objects(file, classes):
+        name = object_name(raw)
+        if not name:
+            nodes = hierarchy(file) if nodes is None else nodes
+            name = object_path(nodes, owner_id(raw))
+        yield from object_rows(name, read_fields(schema, raw))
+
+
+def literal_rows(data: bytes) -> Iterator[tuple[str, dict]]:
+    """los textos del código salen de la lista cerrada de literales, no de un esquema."""
+    for text in visible_texts(data):
+        row = {"id": text_id(text), "en": text, "objeto": Path(METADATA).name}
+        yield target_file("codigo", ""), row
+
+
+def source_rows(source: Path, classes: dict[int, str]) -> Iterator[tuple[str, dict]]:
+    """el metadato no es un archivo de unity: se lee con su propio formato."""
+    if source.name == Path(METADATA).name:
+        return literal_rows(source.read_bytes())
+    return file_rows(source, classes)
 
 
 def merge_rows(pairs: Iterable[tuple[str, dict]]) -> dict[str, list[dict]]:
@@ -45,7 +74,7 @@ def merge_rows(pairs: Iterable[tuple[str, dict]]) -> dict[str, list[dict]]:
 
 def extract(sources: list[Path], classes: dict[int, str], out: Path) -> dict[str, list[dict]]:
     """reescribe la carpeta entera: una escena que un parche elimina no debe quedarse."""
-    files = merge_rows(pair for source in sources for pair in file_rows(source, classes))
+    files = merge_rows(pair for source in sources for pair in source_rows(source, classes))
     for stale in jsonl_files(out).values():
         stale.unlink()
     for target, rows in files.items():

@@ -8,6 +8,7 @@ from pathlib import Path
 from tools.cadenas import text_id
 from tools.juego import game_running, load_file, object_name, script_classes, text_objects
 from tools.lector import Field, read_fields, replace_texts
+from tools.literales import VISIBLE, patch_literals
 from tools.respaldo import (
     check_build,
     ensure_backup,
@@ -17,7 +18,7 @@ from tools.respaldo import (
     save_built,
     steam_build,
 )
-from tools.rutas import DATA, TRANSLATION
+from tools.rutas import DATA, METADATA, TRANSLATION
 from tools.traducciones import load_translations, target_file
 
 Translations = dict[str, dict[str, str]]
@@ -49,21 +50,40 @@ def patch_file(source: Path, translations: Translations, classes: dict[int, str]
     return file.save() if changed else None
 
 
-def build_file(source: Path, translations: Translations, classes: dict, out: Path) -> bool:
+def patch_metadata(
+    data: bytes, translations: Translations, visible: frozenset[str] = VISIBLE
+) -> bytes | None:
+    """el metadato con los literales traducidos, o none si ninguna traducción lo toca."""
+    table = translations.get(target_file("codigo", ""), {})
+    patched = patch_literals(data, table, visible)
+    return None if patched is data else patched
+
+
+def patch_source(source: Path, translations: Translations, classes: dict) -> bytes | None:
+    """el metadato no es un archivo de unity: se parchea con su propio formato."""
+    if source.name == Path(METADATA).name:
+        return patch_metadata(source.read_bytes(), translations)
+    return patch_file(source, translations, classes)
+
+
+def build_file(
+    name: str, source: Path, translations: Translations, classes: dict, out: Path
+) -> bool:
     """un archivo sin cambios se copia tal cual: así queda idéntico al original."""
-    patched = patch_file(source, translations, classes)
+    patched = patch_source(source, translations, classes)
+    (out / name).parent.mkdir(parents=True, exist_ok=True)
     if patched is None:
-        shutil.copyfile(source, out / source.name)
+        shutil.copyfile(source, out / name)
     else:
-        (out / source.name).write_bytes(patched)
+        (out / name).write_bytes(patched)
     return patched is not None
 
 
 def build(folder: Path, out: Path = DATA) -> list[str]:
     """parte siempre de respaldo/; devuelve los archivos que llevan alguna traducción."""
     translations, classes = load_translations(folder), script_classes()
-    sources = [ensure_backup(name, expected) for name, expected in known_hashes().items()]
-    return [s.name for s in sources if build_file(s, translations, classes, out)]
+    sources = {name: ensure_backup(name, expected) for name, expected in known_hashes().items()}
+    return [n for n, s in sources.items() if build_file(n, s, translations, classes, out)]
 
 
 def main(args: list[str]) -> None:
