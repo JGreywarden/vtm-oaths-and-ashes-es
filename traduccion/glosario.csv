@@ -5,7 +5,7 @@ mortal,mortal,sociedad,oficial,
 lick,chupóptero,jerga,oficial,jerga anarquista para vampiro; solo cuando sea sustantivo
 Cammy,Cami / Camis,jerga,oficial,despectivo anarquista para miembro de la Camarilla
 ghoul,ghoul / ghouls,sociedad,oficial,sin adaptar
-blood doll,muñeca de sangre,jerga,oficial,
+blood doll,muñeca de sangre / muñecas de sangre,jerga,oficial,
 vessel,recipiente,sociedad,oficial,mortal del que se bebe
 herd,rebaño,sociedad,oficial,
 sire,sire,sociedad,oficial,
@@ -38,13 +38,13 @@ Archon,Arconte,cargos,oficial,
 Alastor,Alastor,cargos,aprobado,no aparece en los manuales de referencia
 Red List,Lista Roja,cargos,oficial,
 Prince,Príncipe,cargos,oficial,
-Baron,Barón,cargos,oficial,femenino Baronesa no atestiguado en los manuales
+Baron,Barón,cargos,oficial,femenino: la Barón (atestiguado en los manuales); Baronesa no aparece
 Seneschal,Senescal,cargos,oficial,
 Sheriff,Sheriff,cargos,oficial,
 Hound,Sabueso,cargos,oficial,en minúscula cuando no sea el cargo
 Scourge,Azote,cargos,oficial,
 Harpy,Arpía,cargos,oficial,
-Keeper of Elysium,Guardián del Elíseo,cargos,oficial,femenino: Guardiana
+Keeper of Elysium,Guardián del Elíseo / Guardiana del Elíseo,cargos,oficial,
 Primogen,Primogénito,cargos,oficial,el consejo es la Primogenitura
 Regent,Regente,cargos,oficial,cargo Tremere
 High Regent,Alto Regente,cargos,aprobado,no aparece en los manuales de referencia
@@ -180,3 +180,75 @@ Melpominee,Melpómene,disciplinas,aprobado,no aparece en los manuales de referen
 Earth’s Perseverance,Perseverancia de la Tierra,disciplinas,aprobado,no aparece en los manuales de referencia
 Opéra Garnier,Ópera Garnier,lugares,aprobado,forma española asentada
 Grand Escalier,Grand Escalier,lugares,aprobado,el original lo deja en francés; no se traduce
+Journal,Diario,juego,aprobado,pantalla y botón de la interfaz
+Mission Log,Misiones,juego,aprobado,sección del diario; «Registro de misiones» no cabe en una línea de la pestaña
+Settings,Opciones,juego,aprobado,el juego llama Settings y Options a la misma pantalla; se unifica
+Brew,Destilar,juego,aprobado,botón del laboratorio; los manuales hablan de destilación en la alquimia
+Infusion,Infusión,juego,aprobado,fórmula base de cada resonancia
+Addiction,Adicción,juego,aprobado,medidor de Lenz
+Cooperation Gauge,Medidor de Cooperación,juego,aprobado,
+Masquerade Slip,Desliz de Mascarada,juego,aprobado,aviso; la ruptura total es «romper la Mascarada»
+night phase,fase de la noche / fases de la noche,juego,aprobado,cada noche tiene cuatro
+Restock,Reposición,juego,aprobado,nombre de las cacerías de Lenz
+Takeover,Toma,juego,aprobado,misión final de cada distrito: Toma de Mitte
+District Owner,Dueño del distrito,juego,aprobado,
+District Ruler,Gobernante del distrito,juego,aprobado,
+Executioner,Verdugo,juego,aprobado,máscara de Alice: La Verdugo
+Peacemaker,Pacificadora,juego,aprobado,máscara de Alice: La Pacificadora
+Far Reach,Alcance Lejano,disciplinas,oficial,fórmula de alquimia; atestiguada en el manual básico
+Haze,Neblina,disciplinas,oficial,fórmula de alquimia; atestiguada en el manual básico
+Elevate,Elevada,disciplinas,oficial,fórmula de alquimia; atestiguada en Sellos de Sangre
+Vitae MSG,GMS Vitae,disciplinas,oficial,fórmula de alquimia; atestiguada en Sellos de Sangre
+Red’s Flaming Hot Sauce,Salsa Picante Infernal de Red,disciplinas,aprobado,fórmula de alquimia; no aparece en los manuales de referencia
+Stay the Falling Sand,Detener la Arena que Cae,disciplinas,aprobado,fórmula de alquimia; no aparece en los manuales de referencia
+Mandagloire,Mandagloire,disciplinas,aprobado,fórmula de alquimia; no se traduce
+Beast Calmer,Calmante de la Bestia,juego,aprobado,fórmula propia del juego
+Blood Pocket,Bolsa de Sangre,juego,aprobado,fórmula propia del juego
+Awe,Fascinación,disciplinas,oficial,poder de Presencia; atestiguado en el manual básico
+Daunt,Atemorizar,disciplinas,oficial,poder de Presencia; atestiguado en el manual básico y en Sangre Nueva
+Entrancement,Encantamiento,disciplinas,oficial,poder de Presencia; atestiguado en el manual básico
+Dread Gaze,Mirada Aterradora,disciplinas,oficial,poder de Presencia; atestiguado en el manual básico
+Cloud Memory,Nublar la Memoria,disciplinas,oficial,poder de Dominación; atestiguado en el manual básico
+Clear the Field,Despejar el Terreno,disciplinas,aprobado,no aparece en los manuales de referencia
+Stolen Voice,Voz Robada,disciplinas,aprobado,poder de Melpómene: La Voz Robada; no aparece en los manuales de referencia
+fetter,grillete,condición,oficial,objeto o lugar que ata a un wraith; atestiguado en Cultos de los Dioses de la Sangre
+wraith,wraith,condición,oficial,los manuales no lo traducen
+Necromancy,Necromancia,disciplinas,oficial,
+necromancer,necromante,sociedad,oficial,
+Chamberlain,Chambelán,cargos,oficial,
+the Movement,el Movimiento,sectas,oficial,forma abreviada de Anarch Movement
+Garou,Garou,sociedad,oficial,los manuales alternan con Lupinos; el juego dice Garou
+Zmey,Zmey,juego,aprobado,banda de Volkhv; no se traduce
+Great Magus,Gran Magus,juego,aprobado,título de Ldescu
+Sangria,Sangría,juego,aprobado,apodo de Martha Becker; se traduce por ser apodo
+Hammer,Martillo,juego,aprobado,apodo de un matón de la Caza Salvaje; se traduce por ser apodo
+Duskborn Squat,okupa de los Crepusculares,juego,aprobado,
+Offering Pit,Foso de las Ofrendas,juego,aprobado,
+Decent German Car,Coche alemán decente,juego,aprobado,
+thrall,siervo,condición,oficial,quien está bajo un Vínculo de Sangre; atestiguado en el manual básico
+regnant,regente,condición,oficial,quien ejerce un Vínculo de Sangre; en minúscula para no confundirlo con el cargo Tremere
+prestation,prestación,sociedad,oficial,sistema de favores
+unbound,libre / libres,sectas,oficial,vampiros fuera de la Camarilla; atestiguado en el manual básico
+Anarch Revolt,Revuelta Anarquista,sectas,oficial,
+Barony,Baronía,cargos,oficial,
+Antediluvians,Antediluvianos,sociedad,oficial,
+Caine,Caín,sociedad,oficial,
+Cainite,Cainita,sociedad,oficial,
+progeny,progenie,sociedad,oficial,
+methuselah,Matusalén,sociedad,oficial,
+Anathema,Anatema,cargos,oficial,los buscados de la Lista Roja; invariable en plural en el juego
+Sword of Caine,Espada de Caín,sectas,oficial,sobrenombre del Sabbat
+Gehenna War,Guerra de la Gehenna,condición,oficial,
+Week of Nightmares,Semana de las Pesadillas,condición,oficial,
+Shadowlands,Tierras de las Sombras,lugares,oficial,
+Underworld,Inframundo,lugares,oficial,
+spectre,espectro,condición,oficial,wraith degenerado
+Lex Talionis,Lex Talionis,leyes,oficial,
+Irresistible Voice,Voz Irresistible,disciplinas,oficial,poder de Presencia
+Telepathy,Telepatía,disciplinas,oficial,poder de Auspex
+Terminal Decree,Decreto Terminal,disciplinas,oficial,poder de Dominación
+Star Magnetism,Magnetismo de Estrella,disciplinas,oficial,poder de Presencia
+Majesty,Majestad,disciplinas,oficial,poder de Presencia
+Sense the Unseen,Sentir lo Invisible,disciplinas,oficial,poder de Auspex
+Unswayable Mind,Mente Imperturbable,disciplinas,oficial,poder de Fortaleza
+Slot,Ranura / Ranuras,juego,aprobado,perfil de guardado («Ranura 1»); el número lo añade el juego

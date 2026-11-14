@@ -1,7 +1,44 @@
 nombre,hablante,genero,quien_es,tratamiento,notas
-Alice Lytelton,ALICE,mujer,"Vástago Ventrue con siglos de no-vida; agente de la Justicar Lucinde y aspirante a Arconte. Narradora en primera persona","tú: Thomas, Étienne y los mortales a los que somete. usted: Lucinde, y los mortales ante los que finge ser una invitada",pelo cobrizo; registro culto y contenido
-Thomas,THOMAS,hombre,"Vástago con más de dos siglos; agente de Lucinde, compañero forzoso y rival de Alice","tú: Alice, Étienne y los mortales. usted: Lucinde",sarcástico y condescendiente; su clan no se nombra en el prólogo
-Lucinde,LUCINDE,mujer,"Justicar Ventrue; superior de Alice y Thomas","tú: Alice, Thomas y Étienne",la Justicar; no habla en la parte 1 (tratamiento por confirmar al traducir la parte 2)
+Alice Lytelton,ALICE,mujer,"Vástago Ventrue con siglos de no-vida; agente de la Justicar Lucinde y aspirante a Arconte. Narradora en primera persona","tú: Thomas, Étienne, Lenz y los mortales a los que somete. usted: Lucinde, y los mortales ante los que finge ser una de ellos",pelo cobrizo; registro culto y contenido
+Thomas Egerton,THOMAS,hombre,"Vástago Lasombra con más de dos siglos; agente de Lucinde, compañero forzoso y rival de Alice","tú: Alice, Étienne y los mortales. usted: Lucinde",sarcástico y condescendiente; su clan y su apellido no se nombran en el prólogo
+Lucinde,LUCINDE,mujer,"Justicar Ventrue y Alastor; superior de Alice y Thomas","tú: Alice, Thomas y Étienne",la Justicar; no habla en la parte 1 (tratamiento por confirmar al traducir la parte 2)
 Étienne d’Aubigny,ÉTIENNE,hombre,"Vástago Toreador que traicionó a la Camarilla por los Anarquistas; aparenta unos cincuenta y cinco años","tú: Alice y Thomas",teatral; lleva siempre un abanico
-Hana,MUJER DESCONOCIDA / MUJER ATERRADA,mujer,"mortal, ghoul de Étienne; la mujer del chal rosa","usted: Alice",el nombre sale de la clave de retrato y aún no se ve en pantalla
+Hana,MUJER DESCONOCIDA / MUJER ATERRADA,mujer,"mortal, ghoul de Étienne; la mujer del chal rosa","usted: Alice",el nombre sale de la clave de retrato y no se ve en pantalla; en el diario es «La ghoul de Étienne»
 Guardia de la ópera,GUARDIA DE LA ÓPERA,hombre,"mortal; vigilante de la Ópera Garnier","usted: Alice y Thomas («señora», «caballero»)",
+Lenz,LENZ,hombre,"sangre débil, alquimista y adicto a la Ceniza; nacido en Berlín antes del Muro, aparenta veintisiete años. Segundo narrador en primera persona","tú: a todo el mundo, Alice incluida. Alice lo tutea","coloquial y callejero: frases cortas, palabrotas con toda su fuerza, léxico de droga y humor contra sí mismo"
+Juan Rojas,JUAN,hombre,"Arconte Tremere de Lucinde; fue detective",por decidir al traducir sus escenas,
+Doctor Morgan,DOCTOR MORGAN,sin marcar,"Arconte Brujah de Lucinde",por decidir al traducir sus escenas,el diario usa «they»: redacción sin marcas de género; en el acto 3 la narración usa «he» (comprobar al llegar)
+Tamamo Nomae,TAMAMO,mujer,"Arconte Gangrel de Lucinde",por decidir al traducir sus escenas,
+Archivo Viviente,EL ARCHIVO VIVIENTE,mujer,"sirve a Lucinde como depósito de parte de su conocimiento",por decidir al traducir sus escenas,
+Conserje,CONSERJE,hombre,"conserje del Hotel Reinegger",por decidir al traducir sus escenas,
+Conductor,CONDUCTOR,hombre,"ghoul; chófer del Reinegger",por decidir al traducir sus escenas,insolente
+Maxwell Ldescu,LDESCU,hombre,"Tremere, Alto Regente de la Capilla de Berlín; el Gran Magus",por decidir al traducir sus escenas,
+Sofia Ermacora,SOFIA,mujer,"Tremere, Chambelán del Regente",por decidir al traducir sus escenas,
+Cuervo (Friedrich Reinhard),CUERVO,hombre,"Nosferatu Autarca; el mayor traficante de información de Berlín y jefe de los Corvatos",por decidir al traducir sus escenas,apodo traducido (Crow)
+Läuschen,LÄUSCHEN,mujer,"Nosferatu; espía de Cuervo",por decidir al traducir sus escenas,el apodo significa «piojillo» y no se traduce
+Danielle Diron,DIRON,mujer,"Gangrel; Barón de Berlín y líder de la Rosa Negra",por decidir al traducir sus escenas,la Barón
+Hacène,HACÈNE,hombre,"segundo de Diron",por decidir al traducir sus escenas,
+Tuyet,TUYET,sin marcar,"Brujah; líder del Loto Rojo",por decidir al traducir sus escenas,el original usa «they»: redacción sin marcas de género
+May,MAY,mujer,"ghoul y segunda de Tuyet; habitual del Namenslos",por decidir al traducir sus escenas,
+Fadwa Zahir-Kara,FADWA / FADWA ZAHIR-KARA / LÍDER DE LOS ZAHIR-KARA,mujer,"Banu Haqim; líder de la banda Zahir-Kara",por decidir al traducir sus escenas,
+Yaşar Demir,YAŞAR / YAŞAR DEMIR,hombre,"Banu Haqim; mano derecha de Fadwa",por decidir al traducir sus escenas,
+Bekir,DESERTOR,hombre,"Caitiff; desertor de los Zahir-Kara",por decidir al traducir sus escenas,
+Volkhv (Dragomir Malenkov),VOLKHV,hombre,"Tzimisce; líder de los Zmey",por decidir al traducir sus escenas,el apodo no se traduce
+Oraya Samedi,ORAYA,mujer,"Hécata; adivina de Neukölln",por decidir al traducir sus escenas,
+Madame Kiez,MADAME KIEZ,mujer,"regenta el burdel de Tempelhof-Schöneberg",por decidir al traducir sus escenas,
+Sangría (Martha Becker),SANGRÍA,mujer,"mortal; muñeca de sangre fugada del burdel de Madame Kiez",por decidir al traducir sus escenas,apodo traducido (Sangria)
+Christian Müller,MÜLLER,hombre,"Ventrue Autarca; traficante de armas",por decidir al traducir sus escenas,
+Heribert,HERIBERT,hombre,"camarero del bar Tantalos",por decidir al traducir sus escenas,
+Adrian,ADRIAN,hombre,"sangre débil de la Caza Salvaje",por decidir al traducir sus escenas,
+Chantal,CHANTAL,mujer,"rastreadora de la Caza Salvaje",por decidir al traducir sus escenas,
+Martillo,MARTILLO,hombre,"matón de la Caza Salvaje",por decidir al traducir sus escenas,apodo traducido (Hammer)
+Sig,SIG,hombre,"prestamista y proveedor de Ceniza",por decidir al traducir sus escenas,
+Shang,SHANG / ANCIANO,hombre,"contable de Sig",por decidir al traducir sus escenas,
+Sang,SANG,hombre,"fotógrafo de nombre vietnamita; la única persona a la que Lenz ha querido",por decidir al traducir sus escenas,
+Ralle,RALLE,hombre,"sangre débil de la okupa; el cotilla",por decidir al traducir sus escenas,
+Ida,IDA / MUJER DEMACRADA,mujer,"sangre débil de la okupa",por decidir al traducir sus escenas,
+Vika,VIKA / CAMARERA,mujer,"mortal; camarera del Bacchanalia",por decidir al traducir sus escenas,
+Ebrele,BOMBERO,hombre,"mortal; bombero",por decidir al traducir sus escenas,
+Roderich,,hombre,"wraith; el fantasma del monje de las ruinas franciscanas",,solo aparece en el diario
+Annegret,,mujer,"mortal; antigua compañera de internado de Lenz",,solo aparece en una escena de alimentación de Lenz
+Jannis,,hombre,"sangre débil del cobertizo de las barcas",,solo aparece en una escena de alimentación de Lenz

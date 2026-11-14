@@ -1,8 +1,11 @@
 """configuración común: los tests marcados «game» se saltan si no está el juego."""
 
+import struct
+
 import pytest
 
 from tools.cadenas import pack_string
+from tools.literales import HEAD, MAGIC, VERSION
 from tools.rutas import BACKUP, DATA
 
 
@@ -41,3 +44,17 @@ def make_scene(name: str = "DTA0-P1-1") -> bytes:
 @pytest.fixture
 def scene() -> bytes:
     return make_scene()
+
+
+TABLE = 40  # la tabla no va pegada a la cabecera: en medio hay otros campos
+
+
+def make_metadata(texts: list[str], version: int = VERSION) -> bytes:
+    """metadato mínimo: cabecera, tabla de posiciones, bloque de literales y otra sección."""
+    raws = [text.encode("utf-8") for text in texts]
+    offsets = [sum(len(raw) for raw in raws[:n]) for n in range(len(raws) + 1)]
+    table = struct.pack(f"<{len(offsets)}I", *offsets)
+    block = b"".join(raws)
+    counts = (len(table), len(offsets), TABLE + len(table), len(block), len(raws))
+    head = HEAD.pack(MAGIC, version, TABLE, *counts)
+    return head + bytes(TABLE - HEAD.size) + table + block + b"otra seccion"

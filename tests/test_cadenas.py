@@ -1,6 +1,6 @@
 import pytest
 
-from tools.cadenas import pack_string, read_string, text_id
+from tools.cadenas import ZERO_WIDTH, has_visible_text, pack_string, read_string, text_id
 
 
 def test_text_id_is_first_12_hex_chars_of_sha1():
@@ -10,6 +10,12 @@ def test_text_id_is_first_12_hex_chars_of_sha1():
 def test_text_id_uses_utf8():
     assert text_id("ñ") != text_id("n")
     assert len(text_id("ñ")) == 12
+
+
+def test_has_visible_text_ignores_spaces_and_zero_width_spaces():
+    assert has_visible_text(" a ")
+    assert not has_visible_text("")
+    assert not has_visible_text(f" {ZERO_WIDTH}\n")
 
 
 def test_pack_string_pads_to_multiple_of_four():

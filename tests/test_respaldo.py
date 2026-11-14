@@ -141,6 +141,17 @@ def test_replace_backups_discards_the_previous_version(folders):
     backup.mkdir()
     (backup / "level1").write_bytes(b"de la version anterior")
     (backup / "level9").write_bytes(b"ya no tiene texto")
-    replace_backups([data / "level1"], backup)
+    replace_backups(["level1"], data, backup)
     assert [path.name for path in backup.iterdir()] == ["level1"]
     assert (backup / "level1").read_bytes() == ORIGINAL
+
+
+def test_backups_keep_the_folder_of_a_file_that_is_not_at_the_root(folders):
+    data, backup = folders
+    (data / "sub").mkdir()
+    (data / "sub" / "meta.dat").write_bytes(ORIGINAL)
+    assert ensure_backup("sub/meta.dat", EXPECTED, data, backup) == backup / "sub" / "meta.dat"
+    replace_backups(["sub/meta.dat"], data, backup)
+    (data / "sub" / "meta.dat").write_bytes(b"parcheado")
+    assert restore_all(["sub/meta.dat"], data, backup) == ["sub/meta.dat"]
+    assert (data / "sub" / "meta.dat").read_bytes() == ORIGINAL

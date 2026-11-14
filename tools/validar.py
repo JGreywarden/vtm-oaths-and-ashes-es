@@ -5,6 +5,7 @@ import re
 import sys
 from pathlib import Path
 
+from tools.cadenas import ZERO_WIDTH
 from tools.rutas import GLOSSARY, ORIGINALS, TRANSLATION
 from tools.traducciones import jsonl_files, load_jsonl
 
@@ -14,7 +15,7 @@ ID = re.compile(r"[0-9a-f]{12}")
 COLUMNS = ["en", "es", "categoria", "estado", "notas"]
 STATES = {"oficial", "aprobado", "propuesto", "pendiente"}
 ENFORCED = {"oficial", "aprobado"}
-INVISIBLE = "​"
+INVISIBLE = ZERO_WIDTH
 
 Term = tuple[str, re.Pattern, list[str]]
 
