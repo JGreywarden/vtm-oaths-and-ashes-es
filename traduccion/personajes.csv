@@ -1,44 +1,58 @@
 nombre,hablante,genero,quien_es,tratamiento,notas
-Alice Lytelton,ALICE,mujer,"Vástago Ventrue con siglos de no-vida; agente de la Justicar Lucinde y aspirante a Arconte. Narradora en primera persona","tú: Thomas, Étienne, Lenz y los mortales a los que somete. usted: Lucinde, y los mortales ante los que finge ser una de ellos",pelo cobrizo; registro culto y contenido
+Alice Lytelton,ALICE,mujer,"Vástago Ventrue con siglos de no-vida; agente de la Justicar Lucinde y aspirante a Arconte. Narradora en primera persona","tú: Thomas, Étienne, Lenz, los Arcontes, el Archivo Viviente, el Conductor y los mortales a los que somete. usted: Lucinde, el Conserje y los mortales ante los que finge ser una de ellos",pelo cobrizo; registro culto y contenido. El servicio la llama «señora Lytelton» (Ms)
 Thomas Egerton,THOMAS,hombre,"Vástago Lasombra con más de dos siglos; agente de Lucinde, compañero forzoso y rival de Alice","tú: Alice, Étienne y los mortales. usted: Lucinde",sarcástico y condescendiente; su clan y su apellido no se nombran en el prólogo
-Lucinde,LUCINDE,mujer,"Justicar Ventrue y Alastor; superior de Alice y Thomas","tú: Alice, Thomas y Étienne",la Justicar; no habla en la parte 1 (tratamiento por confirmar al traducir la parte 2)
-Étienne d’Aubigny,ÉTIENNE,hombre,"Vástago Toreador que traicionó a la Camarilla por los Anarquistas; aparenta unos cincuenta y cinco años","tú: Alice y Thomas",teatral; lleva siempre un abanico
+Lucinde,LUCINDE,mujer,"Justicar Ventrue y Alastor; superior de Alice y Thomas","tú: a todos (Alice, Thomas, Étienne y los Arcontes); vosotros para Alice y Thomas juntos",la Justicar; todos la tratan de usted («Justicar») salvo Étienne
+Étienne d’Aubigny,ÉTIENNE,hombre,"Vástago Toreador que traicionó a la Camarilla por los Anarquistas; aparenta unos cincuenta y cinco años","tú: Alice, Thomas y Lucinde",teatral; lleva siempre un abanico. Es el único que tutea a Lucinde
 Hana,MUJER DESCONOCIDA / MUJER ATERRADA,mujer,"mortal, ghoul de Étienne; la mujer del chal rosa","usted: Alice",el nombre sale de la clave de retrato y no se ve en pantalla; en el diario es «La ghoul de Étienne»
 Guardia de la ópera,GUARDIA DE LA ÓPERA,hombre,"mortal; vigilante de la Ópera Garnier","usted: Alice y Thomas («señora», «caballero»)",
-Lenz,LENZ,hombre,"sangre débil, alquimista y adicto a la Ceniza; nacido en Berlín antes del Muro, aparenta veintisiete años. Segundo narrador en primera persona","tú: a todo el mundo, Alice incluida. Alice lo tutea","coloquial y callejero: frases cortas, palabrotas con toda su fuerza, léxico de droga y humor contra sí mismo"
-Juan Rojas,JUAN,hombre,"Arconte Tremere de Lucinde; fue detective",por decidir al traducir sus escenas,
-Doctor Morgan,DOCTOR MORGAN,sin marcar,"Arconte Brujah de Lucinde",por decidir al traducir sus escenas,el diario usa «they»: redacción sin marcas de género; en el acto 3 la narración usa «he» (comprobar al llegar)
-Tamamo Nomae,TAMAMO,mujer,"Arconte Gangrel de Lucinde",por decidir al traducir sus escenas,
-Archivo Viviente,EL ARCHIVO VIVIENTE,mujer,"sirve a Lucinde como depósito de parte de su conocimiento",por decidir al traducir sus escenas,
-Conserje,CONSERJE,hombre,"conserje del Hotel Reinegger",por decidir al traducir sus escenas,
-Conductor,CONDUCTOR,hombre,"ghoul; chófer del Reinegger",por decidir al traducir sus escenas,insolente
-Maxwell Ldescu,LDESCU,hombre,"Tremere, Alto Regente de la Capilla de Berlín; el Gran Magus",por decidir al traducir sus escenas,
-Sofia Ermacora,SOFIA,mujer,"Tremere, Chambelán del Regente",por decidir al traducir sus escenas,
-Cuervo (Friedrich Reinhard),CUERVO,hombre,"Nosferatu Autarca; el mayor traficante de información de Berlín y jefe de los Corvatos",por decidir al traducir sus escenas,apodo traducido (Crow)
-Läuschen,LÄUSCHEN,mujer,"Nosferatu; espía de Cuervo",por decidir al traducir sus escenas,el apodo significa «piojillo» y no se traduce
+Lenz,LENZ / HOMBRE RARO / HOMBRE EXTRAÑO,hombre,"sangre débil, alquimista y adicto a la Ceniza; nacido en Berlín antes del Muro, aparenta veintisiete años. Segundo narrador en primera persona","tú: a todo el mundo, Alice incluida. Alice lo tutea","coloquial y callejero: frases cortas, palabrotas con toda su fuerza, léxico de droga y humor contra sí mismo. Con miedo balbucea y mete muletillas: el «uh» del original es «eh»"
+Juan Rojas,JUAN,hombre,"Arconte Tremere de Lucinde; fue detective","tú: Alice. usted: Lucinde",el más cercano a Alice
+Doctor Morgan,DOCTOR MORGAN,sin marcar,"Arconte Brujah de Lucinde","tú: Alice y Thomas. usted: Lucinde",el diario usa «they»: redacción sin marcas de género; en el acto 3 la narración usa «he» (comprobar al llegar)
+Tamamo Nomae,TAMAMO,mujer,"Arconte Gangrel de Lucinde","tú: Alice y Thomas. usted: Lucinde",habla con imágenes de zorros
+Archivo Viviente,EL ARCHIVO VIVIENTE,mujer,"sirve a Lucinde como depósito de parte de su conocimiento","usted: Alice («señora Lytelton»). Alice la tutea",habla como un informe; llama a Lucinde «la dama Justicar Lucinde»
+Conserje,CONSERJE,hombre,"conserje del Hotel Reinegger","usted: Alice («señora Lytelton»). Alice lo trata de usted",cortesía impecable y con doble fondo
+Conductor,CONDUCTOR,hombre,"ghoul; chófer del Reinegger","usted: Alice. Alice lo tutea",insolente: la insolencia va en lo que dice y no en el tratamiento
+Giorgiana,,mujer,"sire de Alice",,solo se la menciona
+Maxwell Ldescu,LDESCU,hombre,"Tremere, Alto Regente de la Capilla de Berlín; el Gran Magus","usted: Alice («Alice Lytelton», «señora Lytelton»). Alice lo trata de usted («Ldescu», «Maxwell»)",cortesía de corte con veneno debajo; vanidoso. Aparenta veintitantos años
+Sofia Ermacora,SOFIA,mujer,"Tremere, Chambelán del Regente","usted: Alice («señora Lytelton»). Alice la trata de usted. tú: el criado",ambiciosa; llama a Ldescu «el Alto Regente». Aparenta unos veinte años
+Criado de la Mansión Ldescu,,hombre,"criado de Ldescu; no tiene lengua",,no habla
+Cuervo (Friedrich Reinhard),CUERVO,hombre,"Nosferatu Autarca; el mayor traficante de información de Berlín y jefe de los Corvatos","tú: Alice («Alice Lytelton») y Läuschen. Alice lo tutea","apodo traducido (Crow); la Viejecita lo llama Fritz. Frases cortas y secas («Mm.»); habla a Läuschen en alemán («Gut gemacht»). En la parte 5 llama a Alice «señora Egerton», su nombre de casada, sin dejar el tuteo"
+Läuschen,LÄUSCHEN,mujer,"Nosferatu; espía de Cuervo","tú: Alice y Lenz. Los dos la tutean","el apodo significa «piojillo» y no se traduce. Punki de pelo verde; habla coloquial y con tacos («Sip», «joder»). Con Lenz es seca y cobra la información («Gánatela»)"
+Viejecita,VIEJECITA,mujer,"Vástago; vende mapas en el Mercado Nocturno y lleva años buscando a Fritz (Cuervo)","tú: Alice («niña», «querida»). Alice la trata de usted",habla con acertijos; su dicho es el del manual: «Una Bestia soy para en Bestia no convertirme»
 Danielle Diron,DIRON,mujer,"Gangrel; Barón de Berlín y líder de la Rosa Negra",por decidir al traducir sus escenas,la Barón
 Hacène,HACÈNE,hombre,"segundo de Diron",por decidir al traducir sus escenas,
 Tuyet,TUYET,sin marcar,"Brujah; líder del Loto Rojo",por decidir al traducir sus escenas,el original usa «they»: redacción sin marcas de género
-May,MAY,mujer,"ghoul y segunda de Tuyet; habitual del Namenslos",por decidir al traducir sus escenas,
-Fadwa Zahir-Kara,FADWA / FADWA ZAHIR-KARA / LÍDER DE LOS ZAHIR-KARA,mujer,"Banu Haqim; líder de la banda Zahir-Kara",por decidir al traducir sus escenas,
-Yaşar Demir,YAŞAR / YAŞAR DEMIR,hombre,"Banu Haqim; mano derecha de Fadwa",por decidir al traducir sus escenas,
-Bekir,DESERTOR,hombre,"Caitiff; desertor de los Zahir-Kara",por decidir al traducir sus escenas,
-Volkhv (Dragomir Malenkov),VOLKHV,hombre,"Tzimisce; líder de los Zmey",por decidir al traducir sus escenas,el apodo no se traduce
-Oraya Samedi,ORAYA,mujer,"Hécata; adivina de Neukölln",por decidir al traducir sus escenas,
-Madame Kiez,MADAME KIEZ,mujer,"regenta el burdel de Tempelhof-Schöneberg",por decidir al traducir sus escenas,
-Sangría (Martha Becker),SANGRÍA,mujer,"mortal; muñeca de sangre fugada del burdel de Madame Kiez",por decidir al traducir sus escenas,apodo traducido (Sangria)
-Christian Müller,MÜLLER,hombre,"Ventrue Autarca; traficante de armas",por decidir al traducir sus escenas,
-Heribert,HERIBERT,hombre,"camarero del bar Tantalos",por decidir al traducir sus escenas,
-Adrian,ADRIAN,hombre,"sangre débil de la Caza Salvaje",por decidir al traducir sus escenas,
-Chantal,CHANTAL,mujer,"rastreadora de la Caza Salvaje",por decidir al traducir sus escenas,
-Martillo,MARTILLO,hombre,"matón de la Caza Salvaje",por decidir al traducir sus escenas,apodo traducido (Hammer)
-Sig,SIG,hombre,"prestamista y proveedor de Ceniza",por decidir al traducir sus escenas,
-Shang,SHANG / ANCIANO,hombre,"contable de Sig",por decidir al traducir sus escenas,
-Sang,SANG,hombre,"fotógrafo de nombre vietnamita; la única persona a la que Lenz ha querido",por decidir al traducir sus escenas,
+May,MAY / ???,mujer,"ghoul y segunda de Tuyet; habitual del Namenslos","tú: Alice y Lenz. Los dos la tutean","coqueta y depredadora («Me gusta»); pelo burdeos. En la narración de Lenz (DTA1-P8-1) el original la trata de «they»: ahí se redacta sin marcas de género, salvo «la chica de la pared», que el original da como «girl»"
+Fadwa Zahir-Kara,FADWA / FADWA ZAHIR-KARA / LÍDER ZAHIR-KARA,mujer,"Banu Haqim; líder de la banda Zahir-Kara","tú: Alice y los suyos. Alice la tutea","soez y tajante («panda de gilipollas», «cierra la puta boca»). Hasta que Alice la ve, nadie revela que es mujer: sus hombres dicen «quien manda», no «la jefa»"
+Yaşar Demir,YAŞAR / YAŞAR DEMIR / LÍDER DE LA BANDA,hombre,"Banu Haqim; mano derecha de Fadwa","tú: Alice. Alice lo tutea",directo; hombre de honor
+Vendedor de kebab,VENDEDOR DE KEBAB,hombre,"mortal; lleva un puesto en Kottbusser Tor","usted: Alice («señorita»). Alice lo trata de usted",
+Policía de paisano,TIPO OBSERVADOR / HOMBRE DESCONOCIDO / POLICÍA DE PAISANO,hombre,"mortal; policía en Kottbusser Tor. Con la misma etiqueta sale otro en el Namenslos, con Lenz","usted: Alice. Alice lo trata de usted. El del Namenslos tutea a Lenz («tío»)",
+Chico sin hogar,CHICO SIN HOGAR,hombre,"mortal; chaval de Kotti que vende información","usted: Alice («señorita»). Alice lo tutea",
+Bekir,DESERTOR,hombre,"Caitiff; desertor de los Zahir-Kara","tú: Alice. Alice lo tutea",soez y desesperado («¡Come mierda!»); llama «esa zorra» a Fadwa
+Volkhv (Dragomir Malenkov),VOLKHV,hombre,"Tzimisce; líder de los Zmey","tú: sus ghouls (en la mansión). Con Alice, por decidir al traducir sus escenas",el apodo no se traduce; Oraya lo llama «Dragón»
+Oraya Samedi,ORAYA,mujer,"Hécata haitiana (Samedi, de la Nación de la Sangre); adivina de Neukölln","usted mutuo mientras dura la farsa de la tirada de tarot; tú mutuo desde que Alice habla claro («Con los no-muertos. Contigo.»). Con Lenz, tú mutuo",solemne e irónica; habla del velo y del destino. Ojos dorados
+Madame Kiez,MADAME KIEZ,mujer,"regenta el burdel de Tempelhof-Schöneberg para los Zahir-Kara","usted: Alice («señora Lytelton», «Alice») y Lenz («Herr Lenz»). Alice la trata de usted («Madame»); Lenz la tutea",nerviosa y mercantil; fuma con boquilla. Llama a Sig «Herr Sigvald»; el «Herr» no se traduce
+Sangría (Martha Becker),SANGRÍA,mujer,"mortal; muñeca de sangre fugada del burdel de Madame Kiez","tú: Alice. Alice la tutea","apodo traducido (Sangria); coloquial y asustada («¿sabes?», «vale»)"
+Muñeca de sangre del burdel,MUÑECA DE SANGRE,mujer,"mortal; compañera de Sangría","usted: Alice («señora»). Alice la tutea",
+Recepcionista del Motel Mondschein,RECEPCIONISTA DE NOCHE,mujer,"mortal; recepcionista de noche","tú: Alice («cielo»). Alice la trata de usted (finge ser mortal)",hosca y de vuelta de todo
+Turistas de las ruinas,TURISTA BORRACHO / TURISTA EN DIRECTO / TURISTA CON CÁMARA,dos hombres y una mujer,"mortales; turistas británicos borrachos (Kev es el borracho)","tú: Alice («señora», «cariño»). Alice los trata de vosotros",en la narración: el borracho; la streamer; el cámara
+Christian Müller,MÜLLER,hombre,"Ventrue Autarca; traficante de armas; alto, rubio y cojo de la pierna derecha","tú: Alice. Alice lo tutea",galán de manual y escurridizo («una monada como tú»); pierde la compostura cuando lo amenazan
+Heribert,HERIBERT,hombre,"Vástago; camarero del bar Tantalos, terreno neutral","tú: Alice. Alice lo tutea",campechano y curioso; le gustan las historias
+Adrian,ADRIAN / HOMBRE,hombre,"sangre débil de la Caza Salvaje","tú: Alice («pelirroja»). Alice lo tutea","bravucón y soez («puto», «de cojones»); llama «Red» a Alice: «pelirroja»"
+Chantal,CHANTAL / MUJER,mujer,"rastreadora de la Caza Salvaje","tú: Alice y Lenz. Alice la tutea","agresiva y soez («zorra»); llama «Adi» a Adrian. En la casa de empeños lleva el machete y la linterna ultravioleta"
+Martillo,MARTILLO / MATÓN GRANDE,hombre,"matón de la Caza Salvaje","tú: Alice",apodo traducido (Hammer); pocas palabras («Sucio. Preguntas.»); lleva un bate
+Sig,SIG,hombre,"prestamista y perista; único proveedor de Ceniza de Berlín. Lleva la casa de empeños","tú: Lenz y Shang, a gritos. Lenz lo tutea","Lenz lo llama «el Camello» (the Dealer); Madame Kiez, «Herr Sigvald». Soez y siempre cabreado («puto gorrón»)"
+Shang,SHANG / ANCIANO / VIEJO,hombre,"contable de Sig","usted: Alice (en Kotti, en el parque y en la parte 5). Alice lo trata de usted hasta la parte 5, donde pasa a tutearlo","con Lenz, tú mutuo. Repite sílabas pegadas («sísísí», «ayudaayudaayuda»); con Lenz es parlanchín y nervioso, y a ratos deja ver que sabe más de lo que aparenta"
+Sang,SANG,hombre,"fotógrafo de nombre vietnamita; la única persona a la que Lenz ha querido",,en el acto 1 solo lo recuerda Lenz (DTA1-P8-1); no habla
 Ralle,RALLE,hombre,"sangre débil de la okupa; el cotilla",por decidir al traducir sus escenas,
-Ida,IDA / MUJER DEMACRADA,mujer,"sangre débil de la okupa",por decidir al traducir sus escenas,
-Vika,VIKA / CAMARERA,mujer,"mortal; camarera del Bacchanalia",por decidir al traducir sus escenas,
+Ida,IDA / MUJER DEMACRADA,mujer,"sangre débil de la okupa","tú: Alice (en Kotti, soez). Alice la trata de usted","con Lenz, tú mutuo. Polaca, adicta a la Ceniza; suplica y roba. Lenz la ve como a una hermana pequeña"
+Vika,VIKA / CAMARERA / CHICA ALTERNATIVA,mujer,"mortal; camarera del Bacchanalia","tú: Alice (en Kotti y en el Bacchanalia). Alice la trata de usted, salvo cuando usa un poder","con Lenz, tú mutuo. Polaca; protege a Lenz («no es mal tío») y le canta las verdades; suelta algún «Scheiße» y «Kurwa», que no se traducen"
+Yonqui del Bacchanalia,YONQUI,mujer,"mortal; yonqui del sótano del Bacchanalia","tú: Lenz",
+Dieter,PUNK 1 / DIETER,hombre,"mortal; falso punk de cabeza rapada que asalta el cuarto de Lenz","tú: Lenz («bicho raro»)",en la narración es «el más grande»; su compañero es PUNK 2
+Frau Gertrude,,mujer,"dependienta de la casa de empeños de Sig",,no habla; el «Frau» no se traduce
+Jonas,,hombre,"recadero de Sig",,no habla; Lenz toma su aspecto con la fórmula Imitador
+Portero del Namenslos,PORTERO,hombre,"portero del club Namenslos","tú: Alice. Alice lo trata de usted, salvo cuando usa un poder",
 Ebrele,BOMBERO,hombre,"mortal; bombero",por decidir al traducir sus escenas,
-Roderich,,hombre,"wraith; el fantasma del monje de las ruinas franciscanas",,solo aparece en el diario
+Roderich,???,hombre,"wraith; el fantasma del monje de las ruinas franciscanas, que emparedó a su propio hijo",,"en DTA1-P3-9 habla con la etiqueta «???»: «Hijo mío» y el «por mi culpa» del rito"
 Annegret,,mujer,"mortal; antigua compañera de internado de Lenz",,solo aparece en una escena de alimentación de Lenz
 Jannis,,hombre,"sangre débil del cobertizo de las barcas",,solo aparece en una escena de alimentación de Lenz
