@@ -21,6 +21,13 @@ VISIBLE = frozenset(
         "e10fc58473cd",
         "cd0c1d67d65f",
         "8db07e99a45b",
+        # historial de autoguardado (parche del 15-11-2026): el más reciente y los demás, que
+        # el parche del 16-11-2026 pasó de «older» a «other». entran por su forma de etiqueta;
+        # el uso en el código no se ha comprobado
+        "aabc616b203d",
+        "bd7779be62ec",
+        # el guardado vigente encabeza la lista de cargar partida (visto en el juego)
+        "14af39732c7e",
         # nombre del capítulo en la ranura y en el registro de conversaciones
         "c53cc8aec774",
         "60e65a2fefe7",

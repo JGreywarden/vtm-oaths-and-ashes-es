@@ -191,8 +191,8 @@ Masquerade Slip,Desliz de Mascarada,juego,aprobado,aviso; la ruptura total es «
 night phase,fase de la noche / fases de la noche,juego,aprobado,cada noche tiene cuatro
 Restock,Reposición,juego,aprobado,nombre de las cacerías de Lenz
 Takeover,Toma,juego,aprobado,misión final de cada distrito: Toma de Mitte
-District Owner,Dueño del distrito,juego,aprobado,
-District Ruler,Gobernante del distrito,juego,aprobado,
+District Owner,Controlado por,juego,aprobado,etiqueta del panel de distrito: va delante del nombre de la banda y caben unos 16 caracteres; casa con «Distritos controlados»
+District Ruler,Gobernante,juego,aprobado,etiqueta del panel de distrito; sin «del distrito» porque no cabe delante del valor
 Executioner,Verdugo,juego,aprobado,máscara de Alice: La Verdugo
 Peacemaker,Pacificadora,juego,aprobado,máscara de Alice: La Pacificadora
 Far Reach,Alcance Lejano,disciplinas,oficial,fórmula de alquimia; atestiguada en el manual básico
@@ -252,3 +252,26 @@ Majesty,Majestad,disciplinas,oficial,poder de Presencia
 Sense the Unseen,Sentir lo Invisible,disciplinas,oficial,poder de Auspex
 Unswayable Mind,Mente Imperturbable,disciplinas,oficial,poder de Fortaleza
 Slot,Ranura / Ranuras,juego,aprobado,perfil de guardado («Ranura 1»); el número lo añade el juego
+First Tradition,Primera Tradición,leyes,oficial,la Mascarada; atestiguada en el manual básico
+Mesmerize,Mesmerismo,disciplinas,oficial,poder de Dominación; atestiguado en el manual básico (p. 256)
+Mirror of Trust,Espejo de Confianza,disciplinas,oficial,fórmula de alquimia; atestiguada en Segunda Inquisición
+Copycat,Imitador,disciplinas,oficial,fórmula de alquimia; atestiguada en Sellos de Sangre
+Nation of Blood,Nación de la Sangre,sectas,oficial,epígrafe de Cultos de los Dioses de la Sangre; son los Samedi del Caribe
+Gaoler’s Bane,Perdición del Carcelero,disciplinas,aprobado,no aparece en los manuales de referencia
+Suffuse the Edifice,Impregnar el Edificio,disciplinas,aprobado,no aparece en los manuales de referencia
+Plug-in,Enchufe,disciplinas,aprobado,fórmula de alquimia con la que Lenz da una descarga; no aparece en los manuales de referencia
+Sewer Rat,Rata de Alcantarilla / Ratas de Alcantarilla,clanes,aprobado,mote de los Nosferatu; forma del diario
+Scab,Costra / Costras,clanes,aprobado,mote de los Nosferatu; forma del diario
+Tyrant,Tirano / Tirana,clanes,aprobado,mote de los Ventrue; forma del diario. Lenz llama a Alice «la Tirana pelirroja»
+Devil-Kindred,Vástago Diablo / Vástagos Diablo,clanes,aprobado,mote de los Hécata; forma del diario
+the Dealer,el Camello,juego,aprobado,apodo que Lenz da a Sig
+the Viets,los vietnamitas,jerga,aprobado,así llama Fadwa al Loto Rojo
+Lady Justicar,dama Justicar,cargos,aprobado,tratamiento que el Archivo Viviente da a Lucinde: «la dama Justicar Lucinde»
+the Hand,la Mano,juego,aprobado,uno de los papeles de Alice: la mano de Lucinde
+Manor Ldescu,Mansión Ldescu,lugares,aprobado,la Capilla de Berlín; como en las misiones
+Manor Schrekt,Mansión Schrekt,lugares,aprobado,nombre anterior de la Mansión Ldescu
+Russian Manor,Mansión rusa,lugares,aprobado,la mansión de Volkhv; como en las misiones
+influence limit,límite de influencia,juego,aprobado,tope del recurso Influencia en los avisos del juego político
+Run-off,Última Ronda,sociedad,oficial,mote de los sangre débil; atestiguado en el manual básico y en Sellos de Sangre
+Rumor,Rumor,disciplinas,aprobado,etiqueta de poder de Lenz en DTA1-P7-3 (fórmula que imita la Dominación); solo sale ahí y no aparece en los manuales ni en las fórmulas del juego
+the Den,el Antro,lugares,aprobado,sótano del Bacchanalia donde se colocan los yonquis; nombre que le da Lenz
